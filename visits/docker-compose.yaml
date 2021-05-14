@@ -1,0 +1,13 @@
+# version of docker compose
+version: '3'
+
+services: 
+    redis-server:
+        image: 'redis'
+    node-app:
+        # look into the current folder and build the image uing that docker file
+        build: .
+        ports: 
+            -"4000:8081"
+            # 4000 is the port on local machine which connected to port 8081 in the container
+            
