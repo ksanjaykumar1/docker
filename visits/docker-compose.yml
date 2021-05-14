@@ -5,6 +5,8 @@ services:
     redis-server:
         image: 'redis'
     node-app:
+        # restart policies for what to do in case of crash , here we specified always i.e attempt to restart the container if crashed all the time
+        restart: always
         # look into the current folder and build the image uing that docker file
         build: .
         ports: 
